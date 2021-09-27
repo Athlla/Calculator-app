@@ -1,5 +1,13 @@
+import Keypad from './components/Keypad/Keypad';
+
+import styles from './styles/App.module.scss';
+
 const App = () => {
-  return <h1>Hello World!</h1>;
+  return (
+    <main className={styles.Container}>
+      <Keypad />
+    </main>
+  );
 };
 
 export default App;
