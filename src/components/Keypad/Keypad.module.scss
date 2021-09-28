@@ -1,9 +1,16 @@
+@use 'styles/breakpoints' as *;
+
 .Keypad {
   display: grid;
   width: 100%;
-  padding: 2rem;
-  gap: 1.7rem;
+  padding: 1.25rem;
+  gap: 16px;
   grid-template-columns: repeat(4, 1fr);
   background: var(--secondary-background);
   border-radius: 15px;
+
+  @include medium {
+    padding: 2rem;
+    gap: 1.7rem;
+  }
 }

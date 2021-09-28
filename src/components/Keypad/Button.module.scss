@@ -1,15 +1,22 @@
+@use 'styles/breakpoints' as *;
+
 .Button {
   grid-column: span 1;
-  height: 70px;
+  height: 60px;
   border: none;
-  border-radius: 15px;
-  font-size: 2rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
   font-family: 'Spartan', sans-serif;
-  transition: all 200ms ease;
+  transition: all 100ms ease;
 
   &:active {
     transform: translateY(5px);
     box-shadow: none;
+  }
+
+  @include medium {
+    font-size: 2rem;
+    border-radius: 12px;
   }
 }
 
