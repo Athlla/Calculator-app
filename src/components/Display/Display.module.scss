@@ -7,11 +7,17 @@
   border-radius: 15px;
   padding: 2rem 1.25rem;
   text-align: right;
-  font-size: 1.5rem;
   margin-bottom: 1.5rem;
 
   @include medium {
     padding: 2rem;
-    font-size: 2.5rem;
+  }
+
+  .Result {
+    font-size: 1.25rem;
+
+    @include medium {
+      font-size: 2.5rem;
+    }
   }
 }

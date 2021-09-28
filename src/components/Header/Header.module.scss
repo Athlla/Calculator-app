@@ -1,0 +1,59 @@
+@use 'styles/breakpoints' as *;
+
+.Header {
+  color: var(--secondary-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  .Title {
+    font-size: 1.8rem;
+  }
+
+  .Theme {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+
+    .Text {
+      display: flex;
+      letter-spacing: 1.5px;
+      margin-right: 1rem;
+      align-items: flex-end;
+      text-transform: uppercase;
+    }
+
+    .Switch {
+      display: flex;
+      flex-direction: column;
+
+      .OptionText {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+      }
+
+      .SwitchButton {
+        width: 70px;
+        height: 25px;
+        display: flex;
+        padding: 0 6px;
+        cursor: pointer;
+        align-items: center;
+        border-radius: 25px;
+        background: var(--secondary-background);
+
+        span {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: var(--tertiary-key-background);
+          transform: translateX(0);
+          transition: all 300ms ease;
+        }
+      }
+    }
+  }
+}

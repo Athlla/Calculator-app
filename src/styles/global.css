@@ -23,4 +23,5 @@
 body {
   font-family: 'Spartan', sans-serif;
   background: var(--primary-background);
+  user-select: none;
 }
