@@ -1,12 +1,20 @@
+import { useContext } from 'react';
+
+import { ThemeContext } from 'context/Theme';
+
 import styles from './Header.module.scss';
 
 const Header = () => {
+  const { theme, changeTheme } = useContext(ThemeContext);
+
+  console.log(theme);
+
   return (
     <header className={styles.Header}>
       <h1 className={styles.Title}>calc</h1>
       <div className={styles.Theme}>
         <p className={styles.Text}>Theme</p>
-        <div className={styles.Switch}>
+        <div className={styles.Switch} onClick={changeTheme}>
           <div className={styles.OptionText}>
             <span>1</span>
             <span>2</span>

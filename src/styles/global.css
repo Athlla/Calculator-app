@@ -12,12 +12,65 @@
   --tertiary-key-shadow: hsl(6, 70%, 34%);
   --primary-text: hsl(221, 14%, 31%);
   --secondary-text: hsl(0, 0%, 100%);
+  --toggle-theme: 0;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+html[data-theme='dark-blue'] {
+  --primary-background: hsl(222, 26%, 31%);
+  --secondary-background: hsl(223, 31%, 20%);
+  --tertiary-background: hsl(224, 36%, 15%);
+  --primary-key-background: hsl(30, 25%, 89%);
+  --primary-key-shadow: hsl(28, 16%, 65%);
+  --secondary-key-background: hsl(225, 21%, 49%);
+  --secondary-key-shadow: hsl(224, 28%, 35%);
+  --tertiary-key-background: hsl(6, 63%, 50%);
+  --tertiary-key-shadow: hsl(6, 70%, 34%);
+  --primary-text: hsl(221, 14%, 31%);
+  --secondary-text: hsl(0, 0%, 100%);
+  --tertiary-text: var(--secondary-text);
+  --text: var(--secondary-text);
+  --toggle-theme: 0;
+}
+
+html[data-theme='9009'] {
+  --primary-background: hsl(0, 0%, 90%);
+  --secondary-background: hsl(0, 5%, 81%);
+  --tertiary-background: hsl(0, 0%, 93%);
+  --primary-key-background: hsl(45, 7%, 89%);
+  --primary-key-shadow: hsl(35, 11%, 61%);
+  --secondary-key-background: hsl(185, 42%, 37%);
+  --secondary-key-shadow: hsl(185, 58%, 25%);
+  --tertiary-key-background: hsl(25, 98%, 40%);
+  --tertiary-key-shadow: hsl(25, 99%, 27%);
+  --primary-text: hsl(60, 10%, 19%);
+  --secondary-text: hsl(0, 0%, 100%);
+  --tertiary-text: var(--secondary-text);
+  --text: var(--primary-text);
+  --toggle-theme: 20px;
+}
+
+html[data-theme='dark-purple'] {
+  --primary-background: hsl(268, 75%, 9%);
+  --secondary-background: hsl(268, 71%, 12%);
+  --tertiary-background: var(--secondary-background);
+  --primary-key-background: hsl(268, 47%, 21%);
+  --primary-key-shadow: hsl(290, 70%, 36%);
+  --secondary-key-background: hsl(281, 89%, 26%);
+  --secondary-key-shadow: hsl(285, 91%, 52%);
+  --tertiary-key-background: hsl(176, 100%, 44%);
+  --tertiary-key-shadow: hsl(177, 92%, 70%);
+  --primary-text: hsl(52, 100%, 62%);
+  --secondary-text: hsl(0, 0%, 100%);
+  --tertiary-text: hsl(198, 20%, 13%);
+  --text: var(--primary-text);
+  --toggle-theme: 40px;
 }
 
 body {
