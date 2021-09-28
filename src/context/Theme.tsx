@@ -5,12 +5,14 @@ type themeType = 'dark-blue' | '9009' | 'dark-purple';
 
 interface ThemeContextType {
   theme: themeType;
-  changeTheme: () => void;
+  nextTheme: () => void;
+  setTheme: (reqTheme: string) => void;
 }
 
 const initialState: ThemeContextType = {
   theme: 'dark-blue',
-  changeTheme: () => {},
+  nextTheme: () => {},
+  setTheme: () => {},
 };
 
 export const ThemeContext = createContext<ThemeContextType>(initialState);
@@ -18,7 +20,7 @@ export const ThemeContext = createContext<ThemeContextType>(initialState);
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<themeType>('dark-blue');
 
-  const changeThemeHandler = () => {
+  const nextThemeHandler = () => {
     let data: themeType = 'dark-blue';
     if (theme === 'dark-blue') {
       data = '9009';
@@ -31,13 +33,19 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     }
 
     setTheme(data);
+    document.documentElement.setAttribute('data-theme', data);
+    localStorage.setItem('theme', data);
+  };
 
-    // document.documentElement.setAttribute('data-theme', theme);
+  const setThemeHandler = (reqTheme: string) => {
+    setTheme(reqTheme as themeType);
+    document.documentElement.setAttribute('data-theme', reqTheme);
   };
 
   const value: ThemeContextType = {
     theme,
-    changeTheme: changeThemeHandler,
+    nextTheme: nextThemeHandler,
+    setTheme: setThemeHandler,
   };
 
   return (
