@@ -28,6 +28,7 @@
   .Result {
     flex: 1;
     font-size: 1.5rem;
+    overflow: hidden;
 
     @include medium {
       font-size: 2.5rem;
