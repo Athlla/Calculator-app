@@ -1,3 +1,5 @@
+import { CalculatorContext } from 'context/Calculator';
+import { useContext } from 'react';
 import styles from './Button.module.scss';
 
 interface Props {
@@ -7,6 +9,8 @@ interface Props {
 }
 
 const Button = ({ children, color, width }: Props) => {
+  const { calculate } = useContext(CalculatorContext);
+
   const buttonColor =
     color === 'tertiary'
       ? styles.Tertiary
@@ -16,8 +20,15 @@ const Button = ({ children, color, width }: Props) => {
 
   const buttonWidth = width === 'double' && styles.Double;
 
+  const clickHandler = () => {
+    calculate(children);
+  };
+
   return (
-    <button className={`${styles.Button} ${buttonWidth} ${buttonColor}`}>
+    <button
+      className={`${styles.Button} ${buttonWidth} ${buttonColor}`}
+      onClick={clickHandler}
+    >
       {children}
     </button>
   );

@@ -7,15 +7,16 @@ import { useContext, useEffect } from 'react';
 import styles from 'styles/App.module.scss';
 
 const App = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const useTheme = useContext(ThemeContext);
 
   useEffect(() => {
+    const { theme, setTheme } = useTheme;
     if (localStorage.getItem('theme')) {
       setTheme(localStorage.getItem('theme')!);
       return;
     }
     setTheme(theme);
-  }, []);
+  }, [useTheme]);
 
   return (
     <main className={styles.Container}>

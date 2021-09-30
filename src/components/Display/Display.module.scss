@@ -8,13 +8,26 @@
   padding: 2rem 1.25rem;
   text-align: right;
   margin-bottom: 1.5rem;
+  display: flex;
 
   @include medium {
     padding: 2rem;
   }
 
-  .Result {
+  .Operator {
+    width: 3rem;
+    height: 100%;
     font-size: 1.25rem;
+    text-align: center;
+
+    @include medium {
+      font-size: 2rem;
+    }
+  }
+
+  .Result {
+    flex: 1;
+    font-size: 1.5rem;
 
     @include medium {
       font-size: 2.5rem;

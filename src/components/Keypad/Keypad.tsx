@@ -1,7 +1,19 @@
+import { useContext } from 'react';
+
+import { CalculatorContext } from 'context/Calculator';
 import Button from './Button';
+
 import styles from './Keypad.module.scss';
 
 const Keypad = () => {
+  const { operand1, operand2, operator, result } =
+    useContext(CalculatorContext);
+
+  console.log(operand1);
+  console.log(operand2);
+  console.log(operator);
+  console.log(result);
+
   return (
     <div className={styles.Keypad}>
       <Button>7</Button>
